@@ -1,0 +1,17 @@
+[
+  {
+    "taskId": "TASK-007",
+    "reason": "Waiting for Thomas to finish TASK-001",
+    "blockedBy": "Thomas",
+    "detectedAt": "2026-04-25T10:00:00Z",
+    "duration": "3h 30m"
+  },
+  {
+    "taskId": "TASK-003",
+    "reason": "GitHub API rate limit reached",
+    "blockedBy": "GitHub",
+    "detectedAt": "2026-04-25T08:00:00Z",
+    "duration": "5h 30m",
+    "resolvedAt": "2026-04-25T13:30:00Z"
+  }
+]

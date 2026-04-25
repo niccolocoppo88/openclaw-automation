@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-04-25T13:30:00Z",
+  "agents": {
+    "Thomas": {
+      "lastHeartbeat": "2026-04-25T13:25:00Z",
+      "status": "active",
+      "currentTask": "TASK-001"
+    },
+    "Goksu": {
+      "lastHeartbeat": "2026-04-25T13:28:00Z",
+      "status": "active",
+      "currentTask": "TASK-005"
+    },
+    "Piotr": {
+      "lastHeartbeat": "2026-04-25T12:00:00Z",
+      "status": "unknown",
+      "currentTask": "TASK-007"
+    }
+  },
+  "blockers": [
+    {
+      "taskId": "TASK-007",
+      "reason": "Waiting for Thomas to finish TASK-001",
+      "blockedBy": "Thomas",
+      "detectedAt": "2026-04-25T10:00:00Z"
+    }
+  ],
+  "standups": [
+    {
+      "timestamp": "2026-04-25T09:00:00Z",
+      "agents": [
+        { "name": "Thomas", "status": "active", "update": "Setting up cron structure", "next": "TASK-001" },
+        { "name": "Goksu", "status": "active", "update": "Preparing test plan", "next": "TASK-005" },
+        { "name": "Piotr", "status": "idle", "update": "Reviewing infrastructure", "next": "TASK-007" }
+      ]
+    },
+    {
+      "timestamp": "2026-04-24T09:00:00Z",
+      "agents": [
+        { "name": "Thomas", "status": "active", "update": "Reading SPEC.md", "next": "TASK-001" },
+        { "name": "Goksu", "status": "active", "update": "Reviewing docs", "next": "TASK-005" },
+        { "name": "Piotr", "status": "active", "update": "Setting up repo", "next": "TASK-007" }
+      ]
+    }
+  ]
+}

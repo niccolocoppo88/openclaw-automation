@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Thomas",
+    "lastHeartbeat": "2026-04-25T13:25:00Z",
+    "status": "active",
+    "currentTask": "TASK-001",
+    "lastUpdate": "Setting up cron jobs structure"
+  },
+  {
+    "name": "Goksu",
+    "lastHeartbeat": "2026-04-25T13:28:00Z",
+    "status": "active",
+    "currentTask": "TASK-005",
+    "lastUpdate": "Creating test plan documentation"
+  },
+  {
+    "name": "Piotr",
+    "lastHeartbeat": "2026-04-25T12:00:00Z",
+    "status": "unknown",
+    "currentTask": "TASK-007",
+    "lastUpdate": "No recent activity"
+  },
+  {
+    "name": "Elisa",
+    "lastHeartbeat": "2026-04-25T13:30:00Z",
+    "status": "active",
+    "currentTask": "TASK-009",
+    "lastUpdate": "Coordinating team setup"
+  }
+]
