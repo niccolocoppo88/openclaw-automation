@@ -60,7 +60,7 @@ Automazione dei task ricorrenti tramite OpenClaw cron jobs. Il sistema coordina 
 
 ### 2.2 blocker-check
 
-**Schedule:** `0 */2 * * *` (ogni 2h)  
+**Schedule:** `0 10 * * 1-5` (10:00 lun-ven, daily once)  
 **Timeout:** 30s
 
 **Flow:**
@@ -81,13 +81,13 @@ Last activity: [timestamp]
 
 ### 2.3 health-check
 
-**Schedule:** `*/30 * * * *` (ogni 30min)  
+**Schedule:** `*/15 * * * *` (ogni 15min)  
 **Timeout:** 15s
 
 **Flow:**
 1. Read heartbeat timestamps from state.json
 2. Compare with current time
-3. If agent silent > 15min → alert Nico
+3. If agent silent > 5min → alert Nico
 
 **Notification Format (DM):**
 ```
