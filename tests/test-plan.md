@@ -30,8 +30,8 @@ This test plan covers:
 | Test ID | Test Case | Expected Result | Status |
 |---------|-----------|----------------|--------|
 | CRON-001 | daily-standup fires at 09:00 Mon-Fri | Cron expression `0 9 * * 1-5` matches target times | ⬜ |
-| CRON-002 | blocker-check fires every 2 hours | Cron expression `0 */2 * * *` fires at 00:00, 02:00, 04:00, etc. | ⬜ |
-| CRON-003 | health-check fires every 30 minutes | Cron expression `*/30 * * * *` fires at :00 and :30 | ⬜ |
+| CRON-002 | blocker-check fires at 10:00 Mon-Fri | Cron expression `0 10 * * 1-5` fires at 10:00 Monday-Friday | ⬜ |
+| CRON-003 | health-check fires every 15 minutes | Cron expression `*/15 * * * *` fires at :00, :15, :30, :45 | ⬜ |
 | CRON-004 | weekly-summary fires Friday at 18:00 | Cron expression `0 18 * * 5` matches Friday 18:00 | ⬜ |
 | CRON-005 | No firing on weekends for daily-standup | Cron expression excludes Sat-Sun | ⬜ |
 
@@ -82,7 +82,7 @@ This test plan covers:
 
 | Test ID | Test Case | Expected Result | Status |
 |---------|-----------|----------------|--------|
-| INT-020 | Agent silent > 15min → alert | DM sent to Nico with agent name + last seen | ⬜ |
+| INT-020 | Agent silent > 5min → alert | DM sent to Nico with agent name + last seen | ⬜ |
 | INT-021 | Agent recovers → notification | Confirmation that agent is back | ⬜ |
 | INT-022 | All agents healthy → no alert | Silent operation | ⬜ |
 | INT-023 | Health check itself fails → retry | 3 retries before giving up | ⬜ |
