@@ -1,0 +1,22 @@
+{
+  "name": "openclaw-automation",
+  "version": "1.0.0",
+  "description": "OpenClaw team automation — cron jobs, notifications, standups",
+  "main": "scheduler.js",
+  "scripts": {
+    "start": "node scheduler.js",
+    "test": "node tests/run.js",
+    "standup": "node cron/daily-standup.js",
+    "health": "node cron/health-check.js",
+    "blocker": "node cron/blocker-check.js",
+    "summary": "node cron/weekly-summary.js"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
