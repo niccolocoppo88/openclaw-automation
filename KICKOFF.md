@@ -96,6 +96,67 @@ Un cron job è "done" quando:
 
 ---
 
+## ⏰ OpenClaw Cron Configuration
+
+I cron jobs vengono registrati in `~/.openclaw/openclaw.json` sotto `cron.jobs[]`:
+
+```json
+{
+  "cron": {
+    "jobs": [
+      {
+        "name": "daily-standup",
+        "schedule": "0 9 * * 1-5",
+        "command": "node /path/to/openclaw-automation/cron/daily-standup.js",
+        "timezone": "Europe/Warsaw",
+        "enabled": true
+      },
+      {
+        "name": "blocker-check",
+        "schedule": "0 10 * * 1-5",
+        "command": "node /path/to/openclaw-automation/cron/blocker-check.js",
+        "timezone": "Europe/Warsaw",
+        "enabled": true
+      },
+      {
+        "name": "health-check",
+        "schedule": "*/15 * * * *",
+        "command": "node /path/to/openclaw-automation/cron/health-check.js",
+        "timezone": "Europe/Warsaw",
+        "enabled": true
+      },
+      {
+        "name": "weekly-summary",
+        "schedule": "0 18 * * 5",
+        "command": "node /path/to/openclaw-automation/cron/weekly-summary.js",
+        "timezone": "Europe/Warsaw",
+        "enabled": true
+      }
+    ]
+  }
+}
+```
+
+**Note:** Il path `openclaw-automation` deve puntare alla directory dove è installato il progetto. Su sandbox: `/workspace/openclaw-automation/`.
+
+### Schedules confermate
+| Job | Schedule | Note |
+|-----|----------|------|
+| daily-standup | 09:00 UTC+2 weekday | Lun-Ven |
+| blocker-check | 10:00 UTC+2 weekday | Lun-Ven |
+| health-check | */15 min | Continuo |
+| weekly-summary | 18:00 UTC+2 Friday | Weekly |
+
+### Variabili ambiente richieste
+```bash
+# .env (da .env.example)
+DISCORD_STANDUP_WEBHOOK_URL=https://discord.com/api/webhooks/...
+DISCORD_ALERT_WEBHOOK_URL=https://discord.com/api/webhooks/...
+STATE_FILE_PATH=/workspace/openclaw-automation/data/state.json
+```
+
+---
+
 ## 📁 Reference Docs
 
 - SPEC.md — Technical specification
